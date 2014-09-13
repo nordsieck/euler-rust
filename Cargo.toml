@@ -1,0 +1,7 @@
+[project]
+name = "euler-rust"
+version = "0.0.1"
+authors =  ["Theodore Nordsieck"]
+
+[[bin]]
+name = "0001"
