@@ -1,4 +1,4 @@
-fn answer() -> uint {
+fn answer() -> usize {
     let mut powers = vec![];
 
     for i in range(2, 21) {
@@ -12,7 +12,7 @@ fn answer() -> uint {
     prod
 }
 
-fn pow(base: uint, power: uint) -> uint {
+fn pow(base: usize, power: usize) -> usize {
     let mut ret = 1;
     for _ in range(0, power) {
         ret *= base;
@@ -20,7 +20,7 @@ fn pow(base: uint, power: uint) -> uint {
     ret
 }
 
-fn factor(mut i: uint) -> Vec<uint> {
+fn factor(mut i: usize) -> Vec<usize> {
     let mut v = vec![];
     let mut n = 2;
     let mut curr = 0u;
@@ -39,7 +39,7 @@ fn factor(mut i: uint) -> Vec<uint> {
     v
 }
 
-fn merge(u: Vec<uint>, v: Vec<uint>) -> Vec<uint> {
+fn merge(u: Vec<usize>, v: Vec<usize>) -> Vec<usize> {
     let a;
     let b;
     if v.len() > u.len() { a = v; b = u; }
@@ -56,7 +56,7 @@ fn merge(u: Vec<uint>, v: Vec<uint>) -> Vec<uint> {
     ret
 }
 
-fn max(a: uint, b: uint) -> uint {
+fn max(a: usize, b: usize) -> usize {
     if b > a { b }
     else { a }
 }
@@ -66,21 +66,21 @@ fn test() {
     let got = answer();
     let expected = 232792560u;
     if got != expected {
-        fail!("got: {}, expected: {}", got, expected)
+        panic!("got: {}, expected: {}", got, expected)
     }
 }
 
 #[test]
 fn test_factor() {
-    if factor(2) != vec![1] { fail!() }
-    if factor(3) != vec![0, 1] { fail!() }
-    if factor(20) != vec![2, 0, 0, 1] { fail!() }
-    if factor(11) != vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 1] { fail!() }
+    if factor(2) != vec![1] { panic!() }
+    if factor(3) != vec![0, 1] { panic!() }
+    if factor(20) != vec![2, 0, 0, 1] { panic!() }
+    if factor(11) != vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 1] { panic!() }
 }
 
 #[test]
 fn test_merge() {
-    if merge(factor(2), factor(3)) != vec![1, 1] { fail!() }
-    if merge(factor(3), factor(5)) != vec![0, 1, 0, 1] { fail!() }
-    if merge(factor(6), factor(8)) != vec![3, 1] { fail!() }
+    if merge(factor(2), factor(3)) != vec![1, 1] { panic!() }
+    if merge(factor(3), factor(5)) != vec![0, 1, 0, 1] { panic!() }
+    if merge(factor(6), factor(8)) != vec![3, 1] { panic!() }
 }

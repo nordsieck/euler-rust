@@ -1,7 +1,7 @@
-fn answer() -> uint {
+fn answer() -> usize {
     let mut f1 = 0u;
     let mut f2 = 1u;
-    let mut f3: uint;
+    let mut f3: usize;
     let mut sum = 0u;
 
     while f2 < 4000000u {
@@ -16,6 +16,6 @@ fn answer() -> uint {
 #[test]
 fn test() {
     if answer() != 4613732 {
-        fail!("Wrong answer");
+        panic!("Wrong answer");
     }
 }

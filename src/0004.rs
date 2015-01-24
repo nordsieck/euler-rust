@@ -1,4 +1,4 @@
-fn answer() -> uint {
+fn answer() -> usize {
     let mut i = 0u;
     let mut candidate = 0u;
     loop {
@@ -11,7 +11,7 @@ fn answer() -> uint {
 }
 
 // difference from 999 -> largest palindrome, largest product
-fn row(i: uint) -> (uint) {
+fn row(i: usize) -> (usize) {
     let mut x = 999 - i;
     let mut y = 999;
     let mut prod;
@@ -26,18 +26,18 @@ fn row(i: uint) -> (uint) {
     0
 }
 
-fn max(i: uint) -> uint {
+fn max(i: usize) -> usize {
     let j = i / 2;
     (999 - i + j) * (999 - j)
 }
 
-fn palindrome(i: uint) -> bool {
+fn palindrome(i: usize) -> bool {
     let mut rev = digits(i);
     rev.reverse();
     rev == digits(i)
 }
 
-fn digits(mut i: uint) -> Vec<uint> {
+fn digits(mut i: usize) -> Vec<usize> {
     let mut v = vec![];
     while i != 0 {
         v.push(i % 10);
@@ -51,35 +51,35 @@ fn test() {
     let got = answer();
     let expected = 906609u;
     if got != expected {
-        fail!("got: {}, expected: {}", got, expected);
+        panic!("got: {}, expected: {}", got, expected);
     }
 }
 
 #[test]
 fn test_digits() {
-    if digits(1) != vec![1u] { fail!() }
-    if digits(11) != vec![1u, 1u] { fail!() }
-    if digits(1234) != vec![4u, 3u, 2u, 1u] { fail!() }
+    if digits(1) != vec![1u] { panic!() }
+    if digits(11) != vec![1u, 1u] { panic!() }
+    if digits(1234) != vec![4u, 3u, 2u, 1u] { panic!() }
 }
 
 #[test]
 fn test_palindrome() {
-    if !palindrome(1) { fail!() }
-    if !palindrome(66) { fail!() }
-    if !palindrome(206602) { fail!() }
-    if !palindrome(2006002) { fail!() }
+    if !palindrome(1) { panic!() }
+    if !palindrome(66) { panic!() }
+    if !palindrome(206602) { panic!() }
+    if !palindrome(2006002) { panic!() }
 
-    if palindrome(67) { fail!() }
-    if palindrome(206702) { fail!() }
+    if palindrome(67) { panic!() }
+    if palindrome(206702) { panic!() }
 }
 
 #[test]
 fn test_row() {
-    if row(0) != (0) { fail!() }
-    if row(998) != (999) { fail!() }
+    if row(0) != (0) { panic!() }
+    if row(998) != (999) { panic!() }
 }
 
 #[test]
 fn test_max() {
-    if max(0) != 998001 { fail!() }
+    if max(0) != 998001 { panic!() }
 }
