@@ -12,6 +12,6 @@ fn answer() -> uint {
 #[test]
 fn test() {
     if answer() != 233168 {
-        fail!("Wrong answer");
+        panic!("Wrong answer");
     }
 }

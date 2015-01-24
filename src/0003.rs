@@ -1,4 +1,4 @@
-fn answer() -> uint { 
+fn answer() -> usize { 
     let mut num = 600851475143u;
     let mut gpf = 2u; // greatest prime factor
 
@@ -6,7 +6,7 @@ fn answer() -> uint {
         if num % gpf == 0 { num /= gpf }
         else { gpf += 1 }
     }
-    println!("gpf: {}", gpf)
+    println!("gpf: {}", gpf);
 
     gpf
 }
@@ -14,6 +14,6 @@ fn answer() -> uint {
 #[test]
 fn test() {
     if answer() != 6857u {
-        fail!("Wrong answer");
+        panic!("Wrong answer");
     }
 }
