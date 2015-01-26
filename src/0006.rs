@@ -20,7 +20,7 @@ fn square_of_sums(i: usize) -> usize {
 
 #[test]
 fn test() {
-    if answer() != 25164150u { panic!("wrong answer"); }
+    if answer() != 25164150us { panic!("wrong answer"); }
 }
 
 #[test]

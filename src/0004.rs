@@ -1,6 +1,6 @@
 fn answer() -> usize {
-    let mut i = 0u;
-    let mut candidate = 0u;
+    let mut i = 0us;
+    let mut candidate = 0us;
     loop {
         let c = row(i);
         if c > candidate { candidate = c; }
@@ -49,7 +49,7 @@ fn digits(mut i: usize) -> Vec<usize> {
 #[test]
 fn test() {
     let got = answer();
-    let expected = 906609u;
+    let expected = 906609us;
     if got != expected {
         panic!("got: {}, expected: {}", got, expected);
     }
@@ -57,9 +57,9 @@ fn test() {
 
 #[test]
 fn test_digits() {
-    if digits(1) != vec![1u] { panic!() }
-    if digits(11) != vec![1u, 1u] { panic!() }
-    if digits(1234) != vec![4u, 3u, 2u, 1u] { panic!() }
+    if digits(1) != vec![1us] { panic!() }
+    if digits(11) != vec![1us, 1us] { panic!() }
+    if digits(1234) != vec![4us, 3us, 2us, 1us] { panic!() }
 }
 
 #[test]
