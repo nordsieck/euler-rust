@@ -1,4 +1,4 @@
-fn answer() -> uint {
+fn answer() -> usize {
     let mut sum = 0u;
 
     for i in range(0u, 1000) {
