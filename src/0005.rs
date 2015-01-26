@@ -5,7 +5,7 @@ fn answer() -> usize {
         powers = merge(powers, factor(i));
     }
 
-    let mut prod = 1u;
+    let mut prod = 1us;
     for i in range(0, powers.len()) {
         prod *= pow(i + 2, powers[i]);
     }
@@ -23,7 +23,7 @@ fn pow(base: usize, power: usize) -> usize {
 fn factor(mut i: usize) -> Vec<usize> {
     let mut v = vec![];
     let mut n = 2;
-    let mut curr = 0u;
+    let mut curr = 0us;
     while i > 1 {
         if i % n == 0 {
             curr += 1;
@@ -31,7 +31,7 @@ fn factor(mut i: usize) -> Vec<usize> {
         }
         else {
             v.push(curr);
-            curr = 0u;
+            curr = 0us;
             n += 1;
         }
     }
@@ -64,7 +64,7 @@ fn max(a: usize, b: usize) -> usize {
 #[test]
 fn test() {
     let got = answer();
-    let expected = 232792560u;
+    let expected = 232792560us;
     if got != expected {
         panic!("got: {}, expected: {}", got, expected)
     }

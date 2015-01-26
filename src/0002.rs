@@ -1,10 +1,10 @@
 fn answer() -> usize {
-    let mut f1 = 0u;
-    let mut f2 = 1u;
+    let mut f1 = 0us;
+    let mut f2 = 1us;
     let mut f3: usize;
-    let mut sum = 0u;
+    let mut sum = 0us;
 
-    while f2 < 4000000u {
+    while f2 < 4000000us {
         f3 = f2;
         f2 += f1;
         f1 = f3;
