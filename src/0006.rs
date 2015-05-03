@@ -4,7 +4,7 @@ fn answer() -> usize {
 
 fn sum_of_squares(i: usize) -> usize {
     let mut ret = 0;
-    for j in range(1, i) {
+    for j in 1..i {
         ret += j * j
     }
     ret
@@ -12,7 +12,7 @@ fn sum_of_squares(i: usize) -> usize {
 
 fn square_of_sums(i: usize) -> usize {
     let mut ret = 0;
-    for j in range(1, i) {
+    for j in 1..i {
         ret += j;
     }
     ret * ret
@@ -20,7 +20,7 @@ fn square_of_sums(i: usize) -> usize {
 
 #[test]
 fn test() {
-    if answer() != 25164150us { panic!("wrong answer"); }
+    if answer() != 25164150 { panic!("wrong answer"); }
 }
 
 #[test]
