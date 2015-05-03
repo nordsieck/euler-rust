@@ -1,7 +1,7 @@
 fn answer() -> usize {
-    let mut sum = 0us;
+    let mut sum = 0;
 
-    for i in range(0us, 1000) {
+    for i in 0..1000 {
         if i % 3 == 0 { sum += i; }
         else if i % 5 == 0 { sum += i; }
     }
