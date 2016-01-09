@@ -1,8 +1,19 @@
 extern crate num;
+use num::BigUint;
 
 fn answer() -> usize {
-    let bn = bigint::from_str::<BigInt>("37107287533902102798797998220837590246510135740250");
-    println!("{}", bn);
+    //let sum = BigUint::new(vec![0]);
+
+    let split = DATA.split_str("\n");
+    for s in split {
+        println!("{}", s)
+    }
+    
+    //let i : BigUint = from_str::<BigUint>("1");
+    
+    //let bn = from_str::<bigint::BigInt>("37107287533902102798797998220837590246510135740250");
+
+    //println!("{}", BigInt::parse_bytes("1".as_bytes(), 10).unwrap());
 
     1
 }
